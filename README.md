@@ -1,79 +1,117 @@
-# Multiple Disease Prediction System using Machine Learning
+# 🩺 Multiple Disease Prediction System  
 
-![mdps - github1](https://github.com/shaadclt/Multiple-Disease-Prediction-System/assets/98437584/fdabe788-d49c-4996-8ee4-b1e0e37f09dc)
+A web-based application built using **Streamlit** and **Machine Learning models** to predict multiple diseases (Diabetes, Heart Disease, and Parkinson’s Disease) from medical data.  
 
+---
 
-This project provides a streamlit web application for predicting multiple diseases, including diabetes, Parkinson's disease, and heart disease, using machine learning algorithms. The prediction models are deployed using Streamlit, a Python library for building interactive web applications.
+## 🚀 Features  
+- ✅ Predicts **Diabetes** using Logistic Regression  
+- ✅ Predicts **Heart Disease** using Support Vector Machine (SVM)  
+- ✅ Predicts **Parkinson’s Disease** using Support Vector Machine (SVM)  
+- ✅ Simple and interactive **Streamlit UI**  
+- ✅ Organized **multi-page navigation** with `streamlit-option-menu`  
+- ✅ Lightweight and fast — works locally in your browser  
 
-## Table of Contents
+---
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Setup](#setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## 📊 Datasets Used  
 
-## Introduction
+This project uses three well-known medical datasets from the **UCI Machine Learning Repository / Kaggle**:
 
-The Multiple Disease Prediction project aims to create a user-friendly web application that allows users to input relevant medical information and receive predictions for different diseases. The machine learning models trained on disease-specific datasets enable accurate predictions for diabetes, Parkinson's disease, and heart disease.
+### 1. Diabetes Dataset  
+- **File:** `diabetes.csv`  
+- **Source:** [Pima Indians Diabetes Database – Kaggle](https://www.kaggle.com/datasets/mathchi/diabetes-data-set)  
+- **Description:** Medical diagnostic data to predict whether a patient has diabetes.  
+- **Key Features:**  
+  - `Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age`  
+- **Target:** `Outcome` (1 → Diabetic, 0 → Non-Diabetic)  
 
-## Features
+### 2. Heart Disease Dataset  
+- **File:** `heart.csv`  
+- **Source:** [Cleveland Heart Disease Dataset – UCI](https://archive.ics.uci.edu/ml/datasets/heart+disease)  
+- **Description:** Clinical data to determine the presence of heart disease.  
+- **Key Features:**  
+  - `age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal`  
+- **Target:** `target` (1 → Heart Disease Present, 0 → No Disease)  
 
-The Multiple Disease Prediction web application offers the following features:
+### 3. Parkinson’s Disease Dataset  
+- **File:** `parkinsons.csv`  
+- **Source:** [Parkinson’s Dataset – UCI](https://archive.ics.uci.edu/ml/datasets/parkinsons)  
+- **Description:** Voice measurements used to detect Parkinson’s disease.  
+- **Key Features:**  
+  - `MDVP:Fo(Hz), MDVP:Fhi(Hz), MDVP:Flo(Hz), MDVP:Jitter(%), MDVP:Shimmer, NHR, HNR, ...`  
+- **Target:** `status` (1 → Parkinson’s, 0 → Healthy)  
 
-- **User Input**: Users can input their medical information, including age, gender, blood pressure, cholesterol levels, and other relevant factors.
-- **Disease Prediction**: The application utilizes machine learning models to predict the likelihood of having diabetes, Parkinson's disease, and heart disease based on the inputted medical data.
-- **Prediction Results**: The predicted disease outcomes are displayed to the user, providing an indication of the probability of each disease.
-- **Visualization**: Visualizations are generated to highlight important features and provide insights into the prediction process.
-- **User-Friendly Interface**: The web application offers an intuitive and user-friendly interface, making it easy for individuals without technical knowledge to use the prediction tool.
+---
 
-## Setup
+## 🧠 Models Used  
 
-To use this project locally, follow these steps:
+- **Logistic Regression** → Diabetes prediction  
+- **Support Vector Machine (SVM)** → Heart Disease prediction  
+- **Support Vector Machine (SVM)** → Parkinson’s prediction  
 
-1. Clone the repository:
+---
 
+## ⚙️ Installation & Setup  
+
+### 1. Clone the Repository  
 ```bash
 git clone https://github.com/shaadclt/Multiple-Disease-Prediction-System.git
-```
-
-2. Install the required dependencies by running:
-
-```bash
+cd Multiple-Disease-Prediction-System
+2. Create a Virtual Environment (Recommended)
+bash
+Copy
+Edit
+python -m venv venv
+venv\Scripts\activate   # On Windows
+source venv/bin/activate  # On Mac/Linux
+3. Install Dependencies
+bash
+Copy
+Edit
 pip install -r requirements.txt
-```
+If requirements.txt is missing, install manually:
 
-3. Download the pre-trained machine learning models for diabetes, Parkinson's disease, and heart disease. Make sure to place them in the appropriate directories within the project structure.
-
-4. Update the necessary configurations and file paths in the project files.
-
-## Usage
-
-To run the Multiple Disease Prediction web application, follow these steps:
-
-1. Open a terminal or command prompt and navigate to the project directory.
-
-2. Run the following command to start the Streamlit application:
-
-```bash
+bash
+Copy
+Edit
+pip install streamlit scikit-learn pandas numpy streamlit-option-menu
+4. Run the App
+bash
+Copy
+Edit
 streamlit run multiplediseaseprediction.py
-```
 
-3. Access the web application by opening the provided URL in your web browser.
+📌 Project Structure
+bash
+Copy
+Edit
+├── multiplediseaseprediction.py   # Main Streamlit app
+├── diabetes.csv                   # Diabetes dataset
+├── heart.csv                      # Heart Disease dataset
+├── parkinsons.csv                  # Parkinson’s dataset
+├── requirements.txt                # Python dependencies
+└── README.md                       # Project documentation
 
-4. Input the relevant medical information as requested by the application.
+🛠️ Tech Stack
 
-5. Click the "Predict" button to generate predictions for diabetes, Parkinson's disease, and heart disease based on the provided data.
+Python 3.x
 
-6. View the prediction results and any accompanying visualizations or insights.
+Streamlit (Frontend UI)
 
-Feel free to customize the web application's appearance, add more disease prediction models, or integrate additional features based on your specific requirements.
+scikit-learn (Machine Learning models)
 
-## Contributing
+pandas, numpy (Data processing)
 
-Contributions to this project are welcome. If you find any issues or have suggestions for improvement, please open an issue or submit a pull request on the project's GitHub repository.
+✨ Future Improvements
+Add more diseases for prediction
 
-## License
+Improve accuracy with advanced ML/DL models
 
-This project is licensed under the [MIT License](LICENSE). You are free to modify and use the code for both personal and commercial purposes.
+Deploy the app online (Streamlit Cloud / Heroku / AWS)
+
+🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+📜 License
+This project is open-source and available under the MIT License.
